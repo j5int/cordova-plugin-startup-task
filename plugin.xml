@@ -13,7 +13,7 @@
     </edit-config>
     <preference name="TASK_ID" default="MyTask"/>
     <preference name="TASK_DISPLAY_NAME" default="My Startup Task"/>
-    <config-file target="package.appxmanifest" parent="/Package/Applications/Application">
+    <config-file target="package.appxmanifest" parent="/Package/Applications/Application" after="uap:ApplicationContentUriRules">
         <Extensions>
             <uap5:Extension Category="windows.startupTask">
                 <uap5:StartupTask
