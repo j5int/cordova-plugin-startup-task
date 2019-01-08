@@ -1,0 +1,25 @@
+{
+  "author": {
+    "name": "rorygrandin"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-startup-task",
+    "platforms": [
+      "windows"
+    ]
+  },
+  "deprecated": false,
+  "description": "Add startup task capabilities to a windows UWP+Cordova app",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-windows"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-startup-task",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rorygrandin/cordova-plugin-startup-task.git"
+  },
+  "version": "1.0.0"
+}
