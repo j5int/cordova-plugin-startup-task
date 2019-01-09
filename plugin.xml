@@ -6,22 +6,27 @@
   <license>MIT</license>
   <keywords>cordova, cordova-windows</keywords>
   <repo>https://github.com/rorygrandin/cordova-plugin-startup-task.git</repo>
+  <js-module src="www/StartupTask.js" name="StartupTask">
+    <clobbers target="StartupTask" />
+</js-module>
   <!-- windows UWP -->
   <platform name="windows">
     <edit-config file="package.windows10.appxmanifest" target="/Package" mode="merge">
-        <Package IgnorableNamespaces="uap5 uap mp" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" />
+        <Package IgnorableNamespaces="uap uap5 mp" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" />
     </edit-config>
-    <preference name="TASK_ID" default="MyTask"/>
     <preference name="TASK_DISPLAY_NAME" default="My Startup Task"/>
-    <config-file target="package.appxmanifest" parent="/Package/Applications/Application" after="uap:ApplicationContentUriRules">
+    <config-file target="package.appxmanifest" parent="/Package/Applications/Application" after="uap:ApplicationContentUriRules;uap:VisualElements">
         <Extensions>
             <uap5:Extension Category="windows.startupTask">
                 <uap5:StartupTask
-                  TaskId="$TASK_ID"
+                  TaskId="MobileStartupTask"
                   Enabled="false"
                   DisplayName="$TASK_DISPLAY_NAME" />
               </uap5:Extension>
         </Extensions>
     </config-file>
+    <js-module src="src/windows/StartupTaskProxy.js" name="StartupTaskProxy">
+        <merges target="" />
+    </js-module>
   </platform>
 </plugin>
