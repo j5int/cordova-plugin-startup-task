@@ -12,10 +12,10 @@
   <!-- windows UWP -->
   <platform name="windows">
     <edit-config file="package.windows10.appxmanifest" target="/Package" mode="merge">
-        <Package IgnorableNamespaces="uap uap5 mp" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" />
+        <Package IgnorableNamespaces="uap5 uap mp" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" />
     </edit-config>
     <preference name="TASK_DISPLAY_NAME" default="My Startup Task"/>
-    <config-file target="package.appxmanifest" parent="/Package/Applications/Application" after="uap:ApplicationContentUriRules;uap:VisualElements">
+    <config-file target="package.windows10.appxmanifest" parent="/Package/Applications/Application" after="uap:ApplicationContentUriRules;uap:VisualElements">
         <Extensions>
             <uap5:Extension Category="windows.startupTask">
                 <uap5:StartupTask
